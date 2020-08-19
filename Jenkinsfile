@@ -12,7 +12,9 @@ pipeline {
       }   
     }
     stage('deploy') {
-        sh 'echo "here ===>>> " '
+        steps {
+            sh 'echo "here ===>>> " '
+        }
     }
   }
 }
