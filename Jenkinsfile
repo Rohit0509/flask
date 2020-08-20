@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'echo "here ===>> installation of dependencies"'
-        sh 'pip3 install --user -r requirments.txt'
+        sh 'pip3 install --user -r requirments.txt' 
       }
     }
     stage('test') {
