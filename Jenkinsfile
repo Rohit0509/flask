@@ -3,6 +3,7 @@ pipeline {
     stages {
     stage('build') {
       steps {
+        sh 'RUN adduser -D dockuser'
         sh 'USER dockuser'
         sh 'echo "here ===>> installation of dependencies"'
         sh 'echo "permission --->>> "'
