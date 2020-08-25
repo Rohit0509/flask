@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'python:3.6.1-alpine' } }
+  agent any
     stages {
     stage('build') {
       steps {
@@ -12,6 +12,11 @@ pipeline {
       steps {
         sh 'python hello.test.py'
       }   
+      post {
+        always {
+          junit 'test-reports/*.xml'
+        }
+      } 
     }
     stage('deploy') {
         steps {
